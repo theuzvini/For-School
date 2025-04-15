@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Banco de Candidatos</title>
     <link rel="stylesheet" href="css/style.css">
+    <script>
 
-    
+    </script>
 </head>
 <body>
 <?php
@@ -25,12 +26,15 @@ $result = mysqli_query($conexao, $sql);
         </tr>
         <?php while($row = mysqli_fetch_assoc($result)) { ?>
             <tr>
-            <td><?php echo $row['Id_cand']; ?></td>
+            <td><?php echo $row['id_cand']; ?></td>
             <td><?php echo $row['nome_completo']; ?></td>
             <td><?php echo $row['email']; ?></td>
+            <td>
+            <a href="editar.php?id_cand=<?php echo $row['id_cand']; ?>"> 
+            <button>Editar</button></a></td>
             </tr>
         <?php } ?>
         </table>
-    </div>
+        </div>
 </body>
 </html>

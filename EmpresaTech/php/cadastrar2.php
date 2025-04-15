@@ -11,7 +11,5 @@ if(mysqli_query($conexao, $sql)){
     }else{
     echo "Erro". mysqli_connect_error($conexao);
     }
-    
     mysqli_close($conexao);
-    
     ?>
