@@ -11,8 +11,10 @@
   </script>
 </head>
 <body>
+  <div>
     <h1>Bem-vindo(a)!</h1>
     <p id="user">Vamos trabalhar, pois ninguém nasceu rico!.</p>
     <button class="btn-dashboard" onclick="Dashboard()">Ir para o Dashboard</button>
+  </div>
 </body>
 </html>

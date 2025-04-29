@@ -11,30 +11,42 @@
 </head>
 <body>
 <?php
+    include("conexao.php");
 
-include("conexao.php");
-$sql = "SELECT * FROM Candidato";
-$result = mysqli_query($conexao, $sql);
+    $sql = "SELECT * FROM Candidato";
+    $result = mysqli_query($conexao, $sql);
 ?>
     <div class="container1">
         <h2>Lista de Candidatos</h2>
         <table>
-        <tr>
-            <th>ID</th>
-            <th>Nome</th>
-            <th>Email</th>
-        </tr>
-        <?php while($row = mysqli_fetch_assoc($result)) { ?>
             <tr>
-            <td><?php echo $row['id_cand']; ?></td>
-            <td><?php echo $row['nome_completo']; ?></td>
-            <td><?php echo $row['email']; ?></td>
-            <td>
-            <a href="editar.php?id_cand=<?php echo $row['id_cand']; ?>"> 
-            <button>Editar</button></a></td>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Email</th>
             </tr>
-        <?php } ?>
+            <?php while($row = mysqli_fetch_assoc($result)) { ?>
+            <tr>
+                <td>
+                    <?php echo $row['id_cand']; ?>
+                </td>
+                <td>
+                    <?php echo $row['nome_completo']; ?>
+                </td>
+                <td>
+                    <?php echo $row['email']; ?>
+                </td>
+                <td>
+                    <a href="editar.php?id_cand=<?php echo $row['id_cand']; ?>"> 
+                    <button>Editar</button></a>
+                </td>
+                <td>
+                    <a href="remove.php?id_cand=<?php echo $row['id_cand']; ?>"> 
+                    <button>Remover</button></a>
+                </td>
+            </tr>
+            <?php } ?>
         </table>
-        </div>
+        <a href="../index.html?"><button>Voltar</button></a>
+    </div>
 </body>
 </html>
