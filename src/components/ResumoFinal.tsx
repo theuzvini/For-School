@@ -1,5 +1,4 @@
-import React from "react";
-import { useState } from "react";
+import { useState } from 'react';
 
 
 export const ResumoFinal = () => {
@@ -9,12 +8,12 @@ export const ResumoFinal = () => {
   const [valor, setValor] = useState(0);
 
   
-  function registrar(acao) (
+  function registrar(acao:) {
     const novoItem = `${acao} -> ${valor}`;
     const novo = [...historico, novoItem];
 
     setHistorico(novo);
-  )
+  }
 
   function aumentar() {
     
